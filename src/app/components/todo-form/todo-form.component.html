@@ -1,0 +1,27 @@
+<div class="container-fluid mt-5">
+
+    <div class="card mt-5">
+        <div class="card-body">
+            <form #todoForm="ngForm" (ngSubmit)="OntoAdd()">
+                <div class="form-group mb-3">
+                        <label for="todoitem">todoItem</label>
+                    <input type="text" name="todoitem" class="form-control" ngModel required>
+                </div>
+
+
+                <div class="form-group mb-3">
+                        <label for="isCompleted">IsCompleted</label>
+                        <select class="form-control" name="isCompleted" type="text" ngModel required>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+
+                        </select>
+                </div>
+                
+                    
+                <button mat-raised-button color="primary" class="btn-block">Add Todo</button>
+
+            </form>
+        </div>
+    </div>
+    </div>

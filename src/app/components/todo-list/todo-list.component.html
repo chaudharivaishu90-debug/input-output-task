@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <ng-container *ngIf="todos.length>0;else notodo">
+            <ul class="list-group">
+                <li *ngFor="let todo of todos" class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="checkbox" class="mr-3"
+                        [checked]="todo.isCompleted"
+                        >
+                        <strong>{{todo.todoitem}}</strong>
+                        <span class="badge ml-2" 
+                        [ngClass]="{
+                            'badge-info':todo.isCompleted,
+                            'badge-danger':!todo.isCompleted
+                        }">
+                    {{todo.isCompleted? "Completed":"Incomplete"}}</span>
+
+                    </div>
+                    <div>
+                        <button mat-mini-fab color="primary" class="mr-2">
+                            <mat-icon>edit</mat-icon></button>
+                            <button mat-mini-fab color="accent" class="mr-2">
+                            <mat-icon>delete</mat-icon></button>
+                    
+                    </div>
+                </li>
+            </ul>
+        </ng-container>
+        <ng-template #notodo>
+            <p class=" alert alert-danger">
+                No Todos!!!
+            </p>
+        </ng-template>
+    </div>
+</div>
